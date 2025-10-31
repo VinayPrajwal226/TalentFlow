@@ -78,7 +78,7 @@ The Assessment Builder features a live preview pane and supports various questio
 
 1.  **Clone the repository:**
     \`\`\`bash
-    git clone [YOUR_GITHUB_REPO_LINK]
+    git clone (https://github.com/VinayPrajwal226/TalentFlow.git)
     cd talent-flow
     \`\`\`
 
