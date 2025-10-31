@@ -29,7 +29,7 @@ import { assessmentsSeed } from './services/seed/assessmentsSeed.js';
 
 
 
-if (import.meta.env.DEV) {
+
 
 
   await db.transaction('rw', db.jobs, db.candidates, db.assessments, async () => {
@@ -89,7 +89,7 @@ if (import.meta.env.DEV) {
 
 
 
-}
+
 
 
 
