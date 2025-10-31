@@ -96,7 +96,7 @@ The Assessment Builder features a live preview pane and supports various questio
 
 The application will be available at `http://localhost:5173` (or the port specified by Vite). The initial seed data (25 jobs, 1000+ candidates, 3+ assessments) will be loaded into IndexedDB on the first run.
 ## Login
-Login Password:Admin 
+Login Password:admin 
 
 ##  Key Technical Decisions
 
