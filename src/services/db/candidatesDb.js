@@ -34,7 +34,7 @@ export const candidatesDb = {
   },
 
   async getById(id) {
-    return await db.candidates.get(id);
+    return await db.candidates.get(Number(id));
   },
 
   async add(candidate) {
@@ -51,7 +51,7 @@ export const candidatesDb = {
   },
 
   async update(id, updates) {
-    const candidate = await db.candidates.get(id);
+    const candidate = await db.candidates.get(Number(id));
     if (!candidate) throw new Error("Candidate not found");
 
     let newTimeline = [...(candidate.timeline || [])];
@@ -68,12 +68,12 @@ export const candidatesDb = {
       lastUpdated: new Date().toISOString(),
     };
 
-    await db.candidates.update(id, finalUpdates);
-    return await db.candidates.get(id);
+    await db.candidates.update(Number(id), finalUpdates); 
+    return await db.candidates.get(Number(id));
   },
 
   async addNote(candidateId, noteText) {
-    const candidate = await db.candidates.get(candidateId);
+    const candidate = await db.candidates.get(Number(candidateId));
     if (!candidate) throw new Error("Candidate not found");
 
     const newNote = {
@@ -82,17 +82,17 @@ export const candidatesDb = {
       text: noteText,
     };
 
-    const notes = [newNote, ...(candidate.notes || [])]; 
-    await db.candidates.update(candidateId, { notes });
+    const notes = [newNote, ...(candidate.notes || [])];
+    await db.candidates.update(Number(candidateId), { notes });
     return newNote;
   },
   
   async getTimeline(candidateId) {
-    const candidate = await db.candidates.get(candidateId);
+    const candidate = await db.candidates.get(Number(candidateId));
     return candidate?.timeline || [];
   },
 
   async delete(candidateId) {
-    return await db.candidates.delete(candidateId);
+    return await db.candidates.delete(Number(candidateId));
   },
 };
