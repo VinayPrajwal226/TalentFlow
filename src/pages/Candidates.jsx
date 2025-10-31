@@ -56,7 +56,7 @@ const Candidates = () => {
         const response = await fetch(`/api/candidates?${params.toString()}`);
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
-        setCandidates(data.candidates);
+        setCandidates(data.candidates || []);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -116,7 +116,7 @@ const Candidates = () => {
         const resp = await fetch(`/api/candidates`);
         if (resp.ok) {
           const data = await resp.json();
-          setCandidates(data.candidates);
+          setCandidates(data.candidates || []);
         }
       } catch (e) { }
     }
