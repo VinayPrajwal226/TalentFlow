@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { insightsDb } from "../services/db/insightsDb";
+import { insightsDb } from "../services/db/InsightsDb";
 
 const AIInsights = () => {
   const [loading, setLoading] = useState(true);
