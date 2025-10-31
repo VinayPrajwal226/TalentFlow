@@ -11,7 +11,7 @@ import {
   DocumentDuplicateIcon,
 } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import { insightsDb } from "../services/db/insightsDb";
+import { insightsDb } from "../services/db/InsightsDb";
 
 const AnimatedNumber = ({ value }) => {
   const [displayValue, setDisplayValue] = useState(0);
