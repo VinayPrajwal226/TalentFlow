@@ -69,7 +69,7 @@ async function initializeApp() {
       <AuthProvider>
         <ParallaxProvider>
           <RouterProvider router={router} />
-        </Provider>
+        </ParallaxProvider>
       </AuthProvider>
     </StrictMode>
   );
